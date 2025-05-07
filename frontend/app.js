@@ -30,7 +30,7 @@ navLinks.forEach(link => {
 // Conexión con backend
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:3001/api'
-  : 'https://tu-backend-url.com/api'; // Reemplaza esto con la URL de tu backend en producción
+  : 'https://barberia-prime-backend.up.railway.app/api'; // Reemplaza esto con la URL que te dio Railway
 
 // Registro
 const registerForm = document.getElementById('register-form');
