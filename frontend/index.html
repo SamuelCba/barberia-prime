@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Prime - Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="auth-bg" id="auth-bg">
+    <div class="auth-wrapper" id="auth-wrapper">
+      <div class="auth-panel auth-panel-left" id="login-panel">
+        <h2>¡Bienvenido de nuevo!</h2>
+        <p>Inicia sesión para acceder a Barbería Prime.</p>
+        <form id="login-form">
+          <input type="email" id="login-email" placeholder="Correo electrónico" required>
+          <input type="password" id="login-password" placeholder="Contraseña" required>
+          <button type="submit">Iniciar sesión</button>
+        </form>
+        <p class="switch-text">¿No tienes cuenta? <span class="switch" id="show-register">Regístrate</span></p>
+      </div>
+      <div class="auth-panel auth-panel-right" id="register-panel">
+        <h2>¡Crea tu cuenta!</h2>
+        <p>Regístrate para reservar y disfrutar de nuestros servicios.</p>
+        <form id="register-form">
+          <input type="text" id="register-username" placeholder="Nombre de usuario" required>
+          <input type="email" id="register-email" placeholder="Correo electrónico" required>
+          <input type="text" id="register-telefono" placeholder="Teléfono (+591XXXXXXXX)" required maxlength="12">
+          <input type="password" id="register-password" placeholder="Contraseña" required>
+          <button type="submit">Registrarse</button>
+        </form>
+        <p class="switch-text">¿Ya tienes cuenta? <span class="switch" id="show-login">Inicia sesión</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="main-bg" id="main-bg" style="display:none;">
+    <header class="main-header">
+      <h1>Barbería Prime</h1>
+      <div class="profile-btn" id="profile-btn">
+        <img id="profile-img" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+      </div>
+      <div class="profile-panel" id="profile-panel">
+        <div class="profile-info">
+          <img id="profile-img-big" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+          <h3 id="profile-username">Usuario</h3>
+          <p id="profile-email">correo@ejemplo.com</p>
+          <p id="profile-telefono">+591XXXXXXXX</p>
+        </div>
+        <div class="profile-actions">
+          <label for="profile-img-input" class="profile-img-upload">
+            <i class="fa fa-camera"></i> Cambiar foto
+            <input type="file" id="profile-img-input" accept="image/*" style="display:none;">
+          </label>
+          <button id="logout-btn">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+    <nav class="main-nav">
+      <ul id="main-nav-list">
+        <li><a href="#servicios" class="nav-link active">Servicios</a></li>
+        <li><a href="#reservas" class="nav-link">Reservas</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li id="admin-nav-item" style="display:none;"><a href="#admin" class="nav-link">Admin</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section id="servicios" class="main-section">
+        <h2>Servicios</h2>
+        <ul class="servicios-lista">
+          <li>Corte de cabello</li>
+          <li>Coloración</li>
+          <li>Peinados</li>
+          <li>Barbería</li>
+        </ul>
+      </section>
+      <section id="reservas" class="main-section" style="display:none;">
+        <h2>Reservas</h2>
+        <form id="reserva-form">
+          <input type="text" id="nombre-reserva" placeholder="Tu nombre" required>
+          <input type="datetime-local" id="fecha-reserva" required>
+          <select id="servicio-reserva">
+            <option value="Corte de cabello">Corte de cabello</option>
+            <option value="Coloración">Coloración</option>
+            <option value="Peinados">Peinados</option>
+            <option value="Barbería">Barbería</option>
+          </select>
+          <button type="submit">Reservar</button>
+        </form>
+        <div id="reservas-lista"></div>
+      </section>
+      <section id="galeria" class="main-section" style="display:none;">
+        <h2>Galería</h2>
+        <div class="galeria-grid">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Corte 1">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Corte 2">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Corte 3">
+        </div>
+      </section>
+      <section id="contacto" class="main-section" style="display:none;">
+        <h2>Contacto</h2>
+        <p>Email: contacto@barberiaprime.com</p>
+        <p>Teléfono: +34 123 456 789</p>
+      </section>
+      <section id="admin" class="main-section" style="display:none;">
+        <h2>Panel de Administración</h2>
+        <div id="admin-reservas">
+          <h3>Reservas de todos los usuarios</h3>
+          <div id="admin-reservas-lista">Cargando...</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html> 

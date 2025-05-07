@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# Archivos de entorno
+.env
+
+# Base de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Directorios de IDE
+.idea/
+.vscode/
+*.swp
+*.swo 
